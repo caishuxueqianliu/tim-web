@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import { MessageBox, Row, Col, Button, Input, Loading, Dialog, Dropdown, DropdownMenu, DropdownItem, Checkbox, CheckboxGroup, Divider, Popover, Collapse, CollapseItem, Form, FormItem, Select, Option, Menu, MenuItem, MenuItemGroup, Submenu, Tooltip} from 'element-ui'
 import Avatar from './components/avatar.vue'
-import Index from './views/index/index.vue'
 import store from './store/index'
 import App from './App'
 import tim from 'tim'
@@ -54,6 +53,7 @@ Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
 Vue.use(Submenu)
 Vue.use(Tooltip)
+
 Vue.component('avatar', Avatar)
 new Vue({
   router,

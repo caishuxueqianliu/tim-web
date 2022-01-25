@@ -42,6 +42,7 @@
 </template>
 
 <script>
+  import { Message } from 'element-ui';
 import { Form, FormItem, Select, Option } from 'element-ui'
 import logo from '../../assets/logo/logo.png'
 import { login,getUserSig } from '../../api/user'
@@ -88,7 +89,7 @@ export default {
       this.$refs['loginForm'].validate(valid => {
         if (valid) {
           login(this.loginForm).then(res=>{
-            if(res.user.id) {
+            if(res && res.user) {
               setToken(res.token)
               setUserID( res.user.id  + '')
               this.userID = res.user.id  + ''
@@ -97,6 +98,8 @@ export default {
                 setUserSig( res)
                 this.login()
               })
+            }else{
+              Message.error('登陆失败，请检查用户名密码')
             }
           })
         }

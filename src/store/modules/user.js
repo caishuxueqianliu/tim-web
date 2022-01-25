@@ -1,4 +1,5 @@
  import tim from '../../tim'
+ import { Message } from 'element-ui';
  import {getUserSig, getUserID, removeUserId, removeUserSig,removeToken} from '../../utils/auth'
 import router from '../../router/index'
  const user = {
@@ -66,6 +67,7 @@ import router from '../../router/index'
         removeUserId()
         removeUserSig()
         removeToken()
+        Message.success('退出成功')
         router.replace('/login')
     })
     }
